@@ -1,0 +1,35 @@
+{
+  "name": "typscipt-express-api-boilerplate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start:dev": "cross-env NODE_ENV=development nodemon",
+    "lint": "eslint --ignore-path .eslintignore '*/**/*.{js,ts,tsx}'",
+    "lint-fix": "eslint --ignore-path .eslintignore --fix '*/**/*.{js,ts}'",
+    "format": "prettier --ignore-path .eslintignore --write'*/**/*.{js,ts}'",
+    "check-format": "prettier --ignore-path .eslintignore '*/**/*.{js,ts}'",
+    "prepare": "husky install"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^17.0.42",
+    "@typescript-eslint/eslint-plugin": "^5.27.1",
+    "@typescript-eslint/parser": "^5.27.1",
+    "eslint": "^8.17.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.1",
+    "nodemon": "^2.0.16",
+    "prettier": "^2.6.2",
+    "ts-node": "^10.8.1",
+    "typescript": "^4.7.3"
+  },
+  "dependencies": {
+    "cross-env": "^7.0.3"
+  }
+}
