@@ -4,32 +4,41 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "rimraf ./build && tsc",
     "start:dev": "cross-env NODE_ENV=development nodemon",
-    "lint": "eslint --ignore-path .eslintignore '*/**/*.{js,ts,tsx}'",
-    "lint-fix": "eslint --ignore-path .eslintignore --fix '*/**/*.{js,ts}'",
-    "format": "prettier --ignore-path .eslintignore --write'*/**/*.{js,ts}'",
-    "check-format": "prettier --ignore-path .eslintignore '*/**/*.{js,ts}'",
+    "start:prod": "cross-env NODE_ENV=production npm run build && node build/index.js",
+    "lint": "eslint --ignore-path .gitignore '*/**/*.{js,ts,tsx}'",
+    "lint-fix": "eslint --ignore-path .gitignore --fix '*/**/*.{js,ts}'",
+    "format": "prettier --ignore-path .gitignore --write'*/**/*.{js,ts}'",
+    "check-format": "prettier --ignore-path .gitignore '*/**/*.{js,ts}'",
+    "test": "cross-env NODE_ENV=test mocha",
     "prepare": "husky install"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/express": "^4.17.13",
     "@types/node": "^17.0.42",
     "@typescript-eslint/eslint-plugin": "^5.27.1",
     "@typescript-eslint/parser": "^5.27.1",
+    "chai": "^4.3.6",
     "eslint": "^8.17.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.26.0",
     "husky": "^8.0.1",
     "lint-staged": "^13.0.1",
+    "mocha": "^10.0.0",
     "nodemon": "^2.0.16",
     "prettier": "^2.6.2",
+    "rimraf": "^3.0.2",
+    "supertest": "^6.2.3",
     "ts-node": "^10.8.1",
     "typescript": "^4.7.3"
   },
   "dependencies": {
-    "cross-env": "^7.0.3"
+    "cross-env": "^7.0.3",
+    "express": "^4.18.1"
   }
 }
