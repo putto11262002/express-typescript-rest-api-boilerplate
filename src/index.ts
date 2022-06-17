@@ -1,3 +1,4 @@
-for (let i = 0; i < 10; i += 1) {
-  console.log(`${i} ${process.env.NODE_ENV}`)
-}
+import config from './config/config'
+import server from './server'
+
+server.listen(config.PORT)
