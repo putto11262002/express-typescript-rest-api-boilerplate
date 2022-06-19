@@ -2,18 +2,14 @@ import http from 'http'
 import { createTerminus } from '@godaddy/terminus'
 import config from '../config/config'
 import app from './app'
+import logger from '../utils/logging/logger'
 
 /**
  * Clear up resources when server shutting down
  */
 function onSignal() {
-  console.log('server shutting down gracefully')
-  return new Promise((resolve, reject) => {
-    if (true) {
-      resolve(true)
-    }
-    reject()
-  })
+  logger.error('server shutting down gracefully')
+  return Promise.all([])
 }
 
 /**
@@ -21,12 +17,7 @@ function onSignal() {
  * this is called when the /healthcheck route is hit
  */
 async function onHealthCheck() {
-  return new Promise((resolve, reject) => {
-    if (true) {
-      resolve(true)
-    }
-    reject()
-  })
+  return Promise.all([])
 }
 
 const server = http.createServer(app)
@@ -38,7 +29,7 @@ createTerminus(server, {
 })
 
 server.on('listening', () => {
-  console.log(`server running on port ${config.PORT}`)
+  logger.info(`server running on port ${config.PORT}`)
 })
 
 export default server
