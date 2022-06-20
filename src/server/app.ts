@@ -1,16 +1,16 @@
-import express from 'express'
-import middlewares from './middlewares'
-import routes from './routes'
+import express from "express";
+import middlewares from "./middlewares";
+import routes from "./routes";
 
-const app = express()
+const app = express();
 /**
  * Apply middlewares
  */
-middlewares(app)
+middlewares(app);
 
 /**
  * Apply routes
  */
-routes(app)
+routes(app);
 
-export default app
+export default app;

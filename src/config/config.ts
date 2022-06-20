@@ -1,13 +1,13 @@
-import dotenv from 'dotenv'
-import { IConfig } from '../types/config'
+import dotenv from "dotenv";
+import { IConfig } from "../types/config";
 
-dotenv.config()
+dotenv.config();
 
 const getSanitisedConfig = (): IConfig => ({
   PORT: Number(process.env.PORT) || 5666,
-  NODE_ENV: process.env.NODE_ENV || 'development',
-})
+  NODE_ENV: process.env.NODE_ENV || "development",
+});
 
-const config = getSanitisedConfig()
+const config = getSanitisedConfig();
 
-export default config
+export default config;
